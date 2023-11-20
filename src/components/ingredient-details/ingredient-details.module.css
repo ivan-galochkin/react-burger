@@ -1,0 +1,33 @@
+.details__title {
+    width: 100%;
+    margin-bottom: -16px;
+}
+
+.details__container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 16px;
+}
+
+.details__subtitle {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+}
+
+.details__image {
+    width: 520px;
+    height: 240px;
+    object-fit: cover;
+}
+
+.details {
+    color: #F2F2F3;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    margin: 40px 40px 60px;
+    align-items: center;
+}

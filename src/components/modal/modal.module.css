@@ -1,0 +1,13 @@
+.popup {
+    background-color: #000;
+    color: #F2F2F3;
+    width: 720px;
+    border-radius: 45px;
+    position: relative;
+}
+
+.popup__button {
+    position: absolute;
+    right: 40px;
+    top: 60px;
+}
