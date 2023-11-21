@@ -9,5 +9,5 @@ export default function Main(props) {
 }
 
 Main.propTypes = {
-    children: PropTypes.array
+    children: PropTypes.node.isRequired
 }

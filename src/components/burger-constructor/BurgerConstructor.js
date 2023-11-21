@@ -4,58 +4,8 @@ import burgerConstructorStyle from "./burger-constructor.module.css"
 import {useState} from "react";
 import Modal from "../modal/Modal";
 import OrderDetails from "../order-details/OrderDetails";
-const ingredients = [
-    {
-        name: "Говяжий метеорит (отбивная)",
-        price: 3000,
-        image: "https://code.s3.yandex.net/react/code/meat-04.png"
-    },
-    {
-        name: "Говяжий метеорит (отбивная)",
-        price: 3000,
-        image: "https://code.s3.yandex.net/react/code/meat-04.png"
-    },
-    {
-        name: "Говяжий метеорит (отбивная)",
-        price: 3000,
-        image: "https://code.s3.yandex.net/react/code/meat-04.png"
-    },
-    {
-        name: "Говяжий метеорит (отбивная)",
-        price: 3000,
-        image: "https://code.s3.yandex.net/react/code/meat-04.png"
-    },
-    {
-        name: "Говяжий метеорит (отбивная)",
-        price: 3000,
-        image: "https://code.s3.yandex.net/react/code/meat-04.png"
-    },
-    {
-        name: "Говяжий метеорит (отбивная)",
-        price: 3000,
-        image: "https://code.s3.yandex.net/react/code/meat-04.png"
-    },
-    {
-        name: "Говяжий метеорит (отбивная)",
-        price: 3000,
-        image: "https://code.s3.yandex.net/react/code/meat-04.png"
-    },
-    {
-        name: "Говяжий метеорит (отбивная)",
-        price: 3000,
-        image: "https://code.s3.yandex.net/react/code/meat-04.png"
-    },
-    {
-        name: "Говяжий метеорит (отбивная)",
-        price: 3000,
-        image: "https://code.s3.yandex.net/react/code/meat-04.png"
-    },
-    {
-        name: "Говяжий метеорит (отбивная)",
-        price: 3000,
-        image: "https://code.s3.yandex.net/react/code/meat-04.png"
-    }
-]
+import {ingredients} from "../utils/utils";
+
 export default function BurgerConstructor() {
     const [openedModal, setOpenedModal] = useState(false);
     return (

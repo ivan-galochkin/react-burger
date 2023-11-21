@@ -1,6 +1,6 @@
 import {ConstructorElement, DragIcon} from "@ya.praktikum/react-developer-burger-ui-components";
 import burgerConstructorIngredientStyle from "./burger-constructor-ingredient.module.css"
-import PropTypes from 'prop-types'
+import {ingredientPropTypes} from "../utils/types";
 export default function BurgerConstructorIngredient({ingredient}) {
     return (
         <div className={burgerConstructorIngredientStyle.container}>
@@ -15,5 +15,5 @@ export default function BurgerConstructorIngredient({ingredient}) {
 }
 
 BurgerConstructorIngredient.propTypes = {
-    ingredient: PropTypes.object
+    ingredient: ingredientPropTypes
 }

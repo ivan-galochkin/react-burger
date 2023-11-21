@@ -6,26 +6,33 @@ import Modal from "../modal/Modal";
 import IngredientDetails from "../ingredient-details/IngredientDetails";
 
 async function getIngredients() {
-    const response = await (await fetch("https://norma.nomoreparties.space/api/ingredients")).json()
-    return response.data
+    return await fetch("https://norma.nomoreparties.space/api/ingredients").then(res => {
+        if (res.ok) {
+            return res.json();
+        }
+        return Promise.reject(`Ошибка ${res.status}`);
+    })
 }
 
 export function BurgerIngredients() {
     const [ingredients, setIngredients] = useState([])
     useEffect(() => {
-        getIngredients().then((ingredients) => setIngredients(ingredients))
+        getIngredients().then((response) => setIngredients(response.data)).catch((err) => {
+            console.log(err)
+        })
     }, [])
     const [openedModal, setOpenedModal] = useState(false);
     const [burger, setBurger] = useState({});
+
     function filterIngredients(type) {
         return ingredients.length > 0 && ingredients.filter((x) => x.type === type).map((props) => (
             <IngredientCard key={props._id} {...props} onClick={() => {
-                console.log(props);
                 setBurger(props);
                 setOpenedModal(true);
             }
             }/>))
     }
+
     return (
         <section className={ingredientsStyle.ingredients}>
             <h2 className={ingredientsStyle.ingredients__title + " text text_type_main-large"}>
@@ -68,7 +75,9 @@ export function BurgerIngredients() {
                     </div>
                 </div>
             </div>
-            {openedModal && <Modal closePopup={() => {setOpenedModal(false)}}>
+            {openedModal && <Modal closePopup={() => {
+                setOpenedModal(false)
+            }}>
                 <IngredientDetails ingredient={burger}/>
             </Modal>}
         </section>

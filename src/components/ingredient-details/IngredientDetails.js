@@ -1,5 +1,5 @@
 import ingredientDetailsStyle from "./ingredient-details.module.css"
-import PropTypes from 'prop-types'
+import {ingredientPropTypes} from "../utils/types";
 export default function IngredientDetails({ingredient}) {
     return(
         <section className={ingredientDetailsStyle.details}>
@@ -28,14 +28,7 @@ export default function IngredientDetails({ingredient}) {
     )
 }
 
-
 IngredientDetails.propTypes = {
-    ingredient: {
-        name: PropTypes.string,
-        image: PropTypes.string,
-        calories: PropTypes.number,
-        proteins: PropTypes.number,
-        fat: PropTypes.number,
-        carbohydrates: PropTypes.number
-    }
+    ingredient: ingredientPropTypes
 }
+

@@ -9,7 +9,6 @@ import PropTypes from 'prop-types'
 const modalRoot = document.getElementById("react-popup");
 
 export default function Modal({closePopup, children}) {
-    console.log(closePopup)
     useEffect(() => {
         function closePopupByEsc(evt) {
             if (evt.key === "Escape") {
