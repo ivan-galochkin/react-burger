@@ -1,0 +1,8 @@
+.main {
+	display: grid;
+	flex-direction: row;
+	max-width: 1200px;
+	width: 100%;
+	gap: 40px;
+	grid-template-columns: 50% 50%;
+}
